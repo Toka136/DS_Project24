@@ -419,7 +419,18 @@ vector<pair<float, player>>Admin::calculate_points(vector<pair<string, float>>De
     }
     return mymap;
 }
+void Admin::display_top(vector<pair<string, float>>Decoration, multimap<double, Product, greater<double>>products, vector<player>players) {
+    vector<pair<float, player>>result = calculate_points(Decoration, products, players);
+    vector<pair<float, player>>::iterator it;
+    auto maxIterator = result.begin();
+    for (it = next(result.begin()); it != result.end(); it++) {
+        if (it->first > maxIterator->first)
+            maxIterator = it;
+    }
+    cout << "The Winner Is Player" << maxIterator->first << endl;
+    cout << "congratulation......";
 
+}
 
 /** Class User **/
 User::User(string &username, string &password, string &email)
