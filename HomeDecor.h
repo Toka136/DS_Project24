@@ -94,6 +94,7 @@ public:
     void Change_Price_Of_Product(multimap<double , Store, greater<double>> stores , int Choice);
     multimap<double, Product, greater<double>>iterate_on_products_Data(vector<pair<string, float>>Decoration, multimap<double, Product, greater<double>>products);
     vector<pair<float, player>> calculate_points(vector<pair<string, float>>Decoration, multimap<double, Product, greater<double>>products,vector<player>players);
+ void display_top(vector<pair<string, float>>Decoration, multimap<double, Product, greater<double>>products, vector<player>players);
 };
 class User {
 private:
